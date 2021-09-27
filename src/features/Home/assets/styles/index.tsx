@@ -55,7 +55,7 @@ export const ProductImage = styled.img`
   min-height:200px;
   max-height:200px
 `;
-export const ProductPrice = styled.div`
+export const ProductPrice = styled.div `
   color:#000;
 `;
 // -----------------------categories list---------------------------------------------
@@ -105,7 +105,13 @@ export const Btn = styled.button`
   font-size: 20px;
   color: #38c2de;
 `;
-export const Qntdiv = styled.span`
+export const Qntdiv= styled.span`
 margin:0 1rem;
 padding :1rem;
 `;
+// .CategoryBoxItemBtn {
+//   background-color: transparent;
+//   border: none;
+//   margin-top: 1rem;
+//   margin-left: 0.5rem;
+// }

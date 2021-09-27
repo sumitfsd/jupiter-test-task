@@ -3,6 +3,7 @@ import { Container } from "./assets/styles";
 import { productListDetails } from "./constants";
 import ProductDetails from "./components/ProductDetails";
 import Categories from "./components/Categories";
+import Cart from "./components/cart";
 import { productDetails, cartProduct } from "./typesList";
 import Header from "../../features/Header";
 import { Homediv } from "./assets/styles";
@@ -47,7 +48,32 @@ const Home = () => {
       setSelectedProductList(data);
     }
   };
-
+  const handleRemoveProduct = (product: cartProduct) => {
+    const isPoductExist = selectedProductList.filter(
+      (item: cartProduct) => item.productId.value !== product.productId.value
+    );
+    setSelectedProductList(isPoductExist);
+  };
+  const handleIncreseProduct = (product: cartProduct) => {
+    const isPoductExist = selectedProductList.map((item: cartProduct) => {
+      if (item.productId.value === product.productId.value) {
+        return { ...item, qnt: item.qnt + 1 };
+      } else return item;
+    });
+    setSelectedProductList(isPoductExist);
+  };
+  const handleDecreseProduct = (product: cartProduct) => {
+    const isPoductExist = selectedProductList.map((item: cartProduct) => {
+      if (item.productId.value === product.productId.value) {
+        if (item.qnt > 1) {
+          return { ...item, qnt: item.qnt - 1 };
+        }
+        handleRemoveProduct(product)
+        return item;
+      } else return item;
+    });
+    setSelectedProductList(isPoductExist);
+  };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e?.target?.value) {
       const name = e.target.value.toLowerCase();
@@ -80,6 +106,12 @@ const Home = () => {
             </div>
           </Container>
         </div>
+        <Cart
+          cartItems={selectedProductList}
+          handleRemoveProduct={handleRemoveProduct}
+          handleIncreseProduct={handleIncreseProduct}
+          handleDecreseProduct={handleDecreseProduct}
+        />
       </Homediv>
     </div>
   );
