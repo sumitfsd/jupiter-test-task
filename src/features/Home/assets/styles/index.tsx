@@ -45,3 +45,47 @@ export const ProductImage = styled.img`
   width: 20rem;
   height: 15.4rem;
 `;
+
+// -----------------------categories list---------------------------------------------
+
+export const CategoriesBox = styled.div`
+  padding-top: 4rem;
+`;
+
+export const CategoriesHeading = styled.h4`
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+`;
+export const CategoriesList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const CategoryItem = styled.ul`
+  border: 1px solid rgba(215, 215, 215, 0.5);
+  padding: 0 1rem;
+  border-radius: 2rem;
+  margin-bottom: 0.8rem;
+  margin-right: 1rem;
+`;
+
+
+export const ItemLink = styled.div`
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #222222;
+  font-size: 1rem;
+  padding: 0.9rem;
+  display: block;
+  cursor: pointer;
+`;
+
+// .CategoryBoxItemBtn {
+//   background-color: transparent;
+//   border: none;
+//   margin-top: 1rem;
+//   margin-left: 0.5rem;
+// }
