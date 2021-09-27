@@ -55,7 +55,7 @@ export const ProductImage = styled.img`
   min-height:200px;
   max-height:200px
 `;
-export const ProductPrice = styled.div `
+export const ProductPrice = styled.div`
   color:#000;
 `;
 // -----------------------categories list---------------------------------------------
@@ -85,10 +85,10 @@ export const CategoryItem = styled.ul`
 `;
 
 
-export const ItemLink = styled.div`
+export const ItemLink = styled.div<{ isActive: boolean }>`
   text-decoration: none;
   text-transform: capitalize;
-  color: #222222;
+  color: ${props => props.isActive ? 'blue' : '#222222'};
   font-size: 1rem;
   padding: 0.9rem;
   display: block;
@@ -105,7 +105,7 @@ export const Btn = styled.button`
   font-size: 20px;
   color: #38c2de;
 `;
-export const Qntdiv= styled.span`
+export const Qntdiv = styled.span`
 margin:0 1rem;
 padding :1rem;
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import { CategoriesHeading, CategoriesList, CategoryItem, ItemLink, Container } from '../assets/styles'
 
 const Categories = (props: any) => {
-  const { categoriesList, handlerCategory } = props
+  const { categoriesList, handlerCategory, selectedCategory } = props
 
   return (
     <Container >
@@ -13,18 +13,13 @@ const Categories = (props: any) => {
         {categoriesList.map((item: string, index: number) => {
           return (
             <CategoryItem key={`${item}_${index}`}>
-              <ItemLink onClick={() => handlerCategory(item)}>
+              <ItemLink onClick={() => handlerCategory(item)} isActive={item === selectedCategory}>
                 {item}
               </ItemLink>
             </CategoryItem>
           )
         })}
 
-        {/* <CategoryItem className="CategoryBoxItem">
-            <button className="CategoryBoxItemBtn">
-              <img src={Btnicon} alt="btnImage" />
-            </button>
-          </CategoryItem> */}
       </CategoriesList>
     </Container>
   );

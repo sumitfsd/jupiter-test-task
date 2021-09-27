@@ -15,6 +15,7 @@ const Home = () => {
   const [selectedProductList, setSelectedProductList] = useState<
     Array<cartProduct>
   >([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
 
   const [categoriesList, setCategoriesList] = useState<Array<string>>([]);
 
@@ -29,11 +30,13 @@ const Home = () => {
   }, []);
 
   const handlerCategory = (category: string) => {
-    if (category) {
+    if (category && category !== selectedCategory) {
       setProductSortedList(
         productList.filter((item) => item.category === category)
       );
+      setSelectedCategory(category)
     } else {
+      setSelectedCategory('')
       setProductSortedList(productList);
     }
   };
@@ -48,12 +51,14 @@ const Home = () => {
       setSelectedProductList(data);
     }
   };
+
   const handleRemoveProduct = (product: cartProduct) => {
     const isPoductExist = selectedProductList.filter(
       (item: cartProduct) => item.productId.value !== product.productId.value
     );
     setSelectedProductList(isPoductExist);
   };
+
   const handleIncreseProduct = (product: cartProduct) => {
     const isPoductExist = selectedProductList.map((item: cartProduct) => {
       if (item.productId.value === product.productId.value) {
@@ -62,6 +67,7 @@ const Home = () => {
     });
     setSelectedProductList(isPoductExist);
   };
+
   const handleDecreseProduct = (product: cartProduct) => {
     const isPoductExist = selectedProductList.map((item: cartProduct) => {
       if (item.productId.value === product.productId.value) {
@@ -74,6 +80,7 @@ const Home = () => {
     });
     setSelectedProductList(isPoductExist);
   };
+
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e?.target?.value) {
       const name = e.target.value.toLowerCase();
@@ -88,6 +95,7 @@ const Home = () => {
       setProductSortedList(productList);
     }
   };
+
   return (
     <div>
       <Homediv>
@@ -96,6 +104,7 @@ const Home = () => {
           <Categories
             categoriesList={categoriesList}
             handlerCategory={handlerCategory}
+            selectedCategory={selectedCategory}
           />
           <Container>
             <div className="fx-2">
