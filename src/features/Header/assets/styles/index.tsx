@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const HeaderBody = styled.div`
-  padding: 0 2.3rem;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   height: 6rem;
@@ -17,7 +17,6 @@ export const LogoContainer = styled.div`
 `;
 
 export const SearchWrapper = styled.div`
-  width: 50%;
   position: relative;
 `;
 
@@ -29,24 +28,25 @@ export const OptionsWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-    padding-left: 5rem;
-    width: 50%;
+  padding-left: 5rem;
+  width: 50%;
 `;
 
 export const GetButton = styled.button`
-  background: #EC6661;
+  background: #1a1a1a;
   border: none;
   color: #fff;
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 5px;
   text-transform: capitalize;
   cursor: pointer;
+  font-size: 0.7rem;
 `;
 
 export const OptionsListWrapper = styled.ul`
   display: flex;
   list-style: none;
-  width: 50%;
+  width: 47%;
   justify-content: space-between;
   align-items: center;
 `;
@@ -56,23 +56,27 @@ export const OptionType = styled.li`
   text-align: center;
   color: #777777;
   cursor: pointer;
+  font-size: 0.8rem;
 `;
 
 export const SearchIcon = styled.span`
   position: absolute;
   top: 50%;
-  right: 0;
-  font-size: 2rem;
-  transform: translate(-50%,-37%);
+  right: -4rem;
+  font-size: 1.5rem;
+  transform: translate(-50%, -37%);
   color: #ddd;
 `;
 
 export const Input = styled.input`
   width: 100%;
-  padding: 1rem 2rem;
-  border: 1px solid #EEEEEE;
+  padding: 0.4rem 2rem;
+  border: 1px solid #eeeeee;
   outline: none;
   border-radius: 1px;
+`;
+export const Cartcontainer = styled.div`
+  padding: 2rem;
 `;
 
 // .headerIcon{

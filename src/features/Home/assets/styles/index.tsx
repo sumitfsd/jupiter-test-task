@@ -1,17 +1,22 @@
 import styled from "styled-components";
-
 export const Container = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-top: 2rem;
-`;
+  display:flex;
+  flex:200px;
+  flex-wrap:wrap;
+  `;
 
 export const ProductBox = styled.div`
   text-align: center;
+  display:inline-block;
+  flex : 1 1 auto;
 `;
 
 export const ProductImageWrapper = styled.div`
   border: 1px solid red;
+  width:100%;
   text-align: center;`
   ;
 
@@ -38,14 +43,21 @@ export const ContentSmall = styled.small`
   `;
 
 export const ProductName = styled.h3`
-    padding: 1rem 0;
-  `;
+    padding-top:1rem;
+    max-height:400px;
+    min-height:100px;
+    font-size:.7rem;
+    `;
 
 export const ProductImage = styled.img`
-  width: 20rem;
-  height: 15.4rem;
+  width: 100%;
+  height: auto;
+  min-height:200px;
+  max-height:200px
 `;
-
+export const ProductPrice = styled.div`
+  color:#000;
+`;
 // -----------------------categories list---------------------------------------------
 
 export const CategoriesBox = styled.div`
@@ -83,9 +95,17 @@ export const ItemLink = styled.div`
   cursor: pointer;
 `;
 
-// .CategoryBoxItemBtn {
-//   background-color: transparent;
-//   border: none;
-//   margin-top: 1rem;
-//   margin-left: 0.5rem;
-// }
+export const Homediv = styled.div`
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  overflow-y:scroll;
+`;
+export const Btn = styled.button`
+  padding: 0 0.4rem;
+  font-size: 20px;
+  color: #38c2de;
+`;
+export const Qntdiv = styled.span`
+margin:0 1rem;
+padding :1rem;
+`;
