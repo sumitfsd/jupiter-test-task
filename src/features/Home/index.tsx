@@ -7,6 +7,7 @@ import Cart from "./components/cart";
 import { productDetails, cartProduct } from "./typesList";
 import Header from "../../features/Header";
 import { Homediv } from "./assets/styles";
+
 const Home = () => {
   const [productList, setProductList] =
     useState<Array<productDetails>>(productListDetails);

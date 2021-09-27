@@ -9,17 +9,17 @@ import {
   ProductName,
   ProductImageWrapper,
 } from "../assets/styles";
-export default function Cart({
-  cartItems,
-  handleRemoveProduct,
-  handleIncreseProduct,
-  handleDecreseProduct,
-}: {
+
+interface PropsDetails {
   cartItems: cartProduct[];
   handleRemoveProduct: (item: any) => void;
   handleIncreseProduct: (item: any) => void;
   handleDecreseProduct: (item: any) => void;
-}) {
+}
+
+export default function Cart(props: PropsDetails) {
+
+  const { cartItems, handleRemoveProduct, handleIncreseProduct, handleDecreseProduct } = props
   return (
     <div>
       <h1>cart</h1>

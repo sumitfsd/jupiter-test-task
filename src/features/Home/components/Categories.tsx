@@ -1,7 +1,13 @@
 import React from "react";
 import { CategoriesHeading, CategoriesList, CategoryItem, ItemLink, Container } from '../assets/styles'
 
-const Categories = (props: any) => {
+interface PropsDetails {
+  categoriesList: Array<string>;
+  handlerCategory: (cateogry: string) => void;
+  selectedCategory?: string;
+}
+
+const Categories = (props: PropsDetails) => {
   const { categoriesList, handlerCategory, selectedCategory } = props
 
   return (
@@ -19,7 +25,6 @@ const Categories = (props: any) => {
             </CategoryItem>
           )
         })}
-
       </CategoriesList>
     </Container>
   );
